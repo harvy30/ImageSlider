@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Image Slider</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="mainContainer">
+        <img id="img" src="Image/img.jpg">
+        <div id="left_holder"><img onclick="slide(-1)" class="left" src="Image/ZZLeft.png"></div>
+        <div id="right_holder"><img onclick="slide(1)" class="right" src="Image/ZZArrow.png"></div>
+    </div>
+    <script>
+    var imageCount = 1;
+    var total = 9;
+
+    function slide(x) {
+        var Images = document.getElementById("img");
+        imageCount = imageCount + x;
+        if (imageCount > total) {
+            imageCount = 1;
+        }
+        if (imageCount < 1) {
+            imageCount = total;
+        }
+        Images.src = "Image/img" + imageCount + ".jpg";
+    }
+    </script>
+</body>
+
+</html>
